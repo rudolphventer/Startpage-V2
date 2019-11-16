@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(bg.jpg);
+    background-color: black;;
     background-size: 110%;
     background-position: center;
   }
@@ -64,7 +64,12 @@
     opacity: 0.6;
     background-color: black;
     margin: 1vh;
-    text-decoration: none;
+    text-decoration: none;   
+  }
+
+  .button:hover {
+    background-color: var(--accents);
+    color: black;
   }
 
   .search {
@@ -97,7 +102,7 @@
     height: 8vh;
     width: 8vh;
     filter: invert(91%) sepia(18%) saturate(5244%) hue-rotate(358deg) brightness(102%) contrast(103%);
-    /*https://codepen.io/sosuke/pen/Pjoqqp to get the css hue thing above*/
+    /*https://codepen.io/sosuke/pen/Pjoqqp to get the css hue conversion above*/
   }
   
   
@@ -106,16 +111,34 @@
     font-family: monospace;
     font-size: 4vh;
     margin-top: 2vh;
+    width: 40vh;
   }
 
   #landing-content {
     overflow: hidden;
-    background-image: url(bg.jpg);
+    background-image: url(media/bg.jpg);
+    width: 100%;
+    height: 100%;
+    background-size: 110%;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -50;
+    top: 0;
+    left: 0;
+  }
+
+  #asteroids {
+    overflow: hidden;
+    background-image: url(media/asteroids.png);
     width: 100%;
     height: 100%;
     background-size: 110%;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
+    z-index: -40;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   .scanlines {
@@ -123,12 +146,11 @@
     height: 100%;
     display: flex;
     position: absolute;
-    background-image: url(scanline.png);
+    background-image: url(media/scanline.png);
     background-position: center;
     background-repeat: repeat;
     z-index: 100;
     overflow: hidden;
     pointer-events: none;
-    opacity: 0.5;
+    opacity: 0.6;
   }
-  /*https://gijsroge.github.io/tilt.js/?
